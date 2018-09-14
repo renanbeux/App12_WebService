@@ -11,7 +11,7 @@ namespace App12_WebService
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage();
+			MainPage = new App12_WebService.View.PaginaInicial();
 		}
 
 		protected override void OnStart ()

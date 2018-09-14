@@ -15,6 +15,8 @@ namespace App12_WebService.View
 		public PaginaInicial ()
 		{
 			InitializeComponent ();
+
+            BindingContext = new ViewModel.PaginaInicialViewModel();
 		}
 	}
 }
