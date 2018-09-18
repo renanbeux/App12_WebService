@@ -1,16 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="NossoChat"
              x:Class="App12_WebService.View.Chats">
     <ContentPage.ToolbarItems>
         <!-- TODO - Adicionar itens -->
+        <ToolbarItem Icon="add.png" Text="Adiciona Chat" Command="{Binding AdicionarCommand}"/>
+        <ToolbarItem Icon="sort.png" Text="Ordenar alfabeticamente" Command="{Binding OrdenarCommand}"/>
+        <ToolbarItem Icon="refresh.png" Text="Atualiza lista de Chats" Command="{Binding AtualizarCommand}"/>
+
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <ListView>
+            <ListView ItemsSource="{Binding Chats}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding nome}" TextColor="#5ED055"/>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding nome}" TextColor="#5ED055"/>
+                            </StackLayout>
+                        </ViewCell>                        
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

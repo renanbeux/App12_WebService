@@ -15,6 +15,8 @@ namespace App12_WebService.View
 		public Chats ()
 		{
 			InitializeComponent ();
+
+            BindingContext = new ViewModel.ChatsViewModel();
 		}
 	}
 }

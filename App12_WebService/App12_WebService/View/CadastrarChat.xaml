@@ -5,8 +5,9 @@
              BackgroundColor="#5ED055">
     <ContentPage.Content>
         <StackLayout>
-            <Entry Placeholder="Nome do chat" PlaceholderColor="#5ED055" BackgroundColor="White" TextColor="#5ED055"/>
-            <Button Text="Cadastrar" BackgroundColor="Transparent" TextColor="White"/>
+            <Entry Text="{Binding nome}" Placeholder="Nome do chat" PlaceholderColor="#5ED055" BackgroundColor="White" TextColor="#5ED055"/>
+            <Button Text="Cadastrar" BackgroundColor="Transparent" TextColor="White" Command="{Binding CadastrarCommand}"/>
+            <Label Text="{Binding mensagem}" TextColor="White"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

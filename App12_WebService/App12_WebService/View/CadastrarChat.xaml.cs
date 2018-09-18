@@ -15,6 +15,8 @@ namespace App12_WebService.View
 		public CadastrarChat ()
 		{
 			InitializeComponent ();
-		}
+
+            BindingContext = new ViewModel.CadastrarChatViewModel();
+        }
 	}
 }
