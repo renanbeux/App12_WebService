@@ -34,7 +34,7 @@ namespace App12_WebService.ViewModel
                 ((NavigationPage)App.Current.MainPage).Navigation.PopAsync();
 
                 var Nav = (NavigationPage)App.Current.MainPage;
-                var Chats = (View.Chats)Nav.CurrentPage;
+                var Chats = (View.Chats)Nav.RootPage;
                 var ViewModel = (ChatsViewModel)Chats.BindingContext;
 
                 if (ViewModel.AtualizarCommand.CanExecute(null))

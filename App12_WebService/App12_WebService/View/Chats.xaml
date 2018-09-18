@@ -12,7 +12,7 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding Chats}">
+            <ListView ItemsSource="{Binding Chats}" SelectedItem="{Binding SelectedItemChat}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

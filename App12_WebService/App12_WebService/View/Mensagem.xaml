@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <StackLayout>
             <ScrollView>
-                <StackLayout>
+                <StackLayout x:Name="SLMensagemContainer">
                     <Frame OutlineColor="#5ED055" CornerRadius="0" HorizontalOptions="Start">
                         <StackLayout>
                             <Label Text="Filipe123" FontSize="10" TextColor="#5ED055"/>
@@ -13,14 +13,14 @@
                         </StackLayout>
                     </Frame>
 
-                    <StackLayout Padding="5" BackgroundColor="#5ED055">
+                    <StackLayout Padding="5" BackgroundColor="#5ED055" HorizontalOptions="End">
                         <Label Text="Mundo aniii" TextColor="White"/>
                     </StackLayout>
                 </StackLayout>
             </ScrollView>
 
             <StackLayout Orientation="Horizontal">
-                <Frame OutlineColor="#5ED055" CornerRadius="0">
+                <Frame OutlineColor="#5ED055" CornerRadius="0" HorizontalOptions="FillAndExpand">
                     <Entry Placeholder="Mensagem" BackgroundColor="White" TextColor="#5ED055" HorizontalOptions="FillAndExpand"/>
                 </Frame>
                 <Button Text="Enviar" BackgroundColor="#5ED055" TextColor="White"/>

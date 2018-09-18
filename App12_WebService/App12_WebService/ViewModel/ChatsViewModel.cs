@@ -10,7 +10,20 @@ using System.Linq;
 namespace App12_WebService.ViewModel
 {
     public class ChatsViewModel : INotifyPropertyChanged
-    {
+    {        
+        private Chat _selectedItemChat;
+        public Chat SelectedItemChat
+        {
+            get { return _selectedItemChat; }
+            set { _selectedItemChat = value; OnPropertyChanged("SelectedItemChat"); GoPaginaMensagem(value); }
+        }
+
+        private void GoPaginaMensagem(Chat chat)
+        {
+            if (chat != null)
+               ((NavigationPage)App.Current.MainPage).Navigation.PushAsync(new View.Mensagem(chat));
+        }
+
         private List<Chat> _chats;
         public List<Chat> Chats
         {

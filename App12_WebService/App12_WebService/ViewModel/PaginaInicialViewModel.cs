@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using App12_WebService.Model;
 using App12_WebService.Service;
 using Newtonsoft.Json;
+using App12_WebService.Util;
 
 namespace App12_WebService.ViewModel
 {
@@ -49,7 +50,8 @@ namespace App12_WebService.ViewModel
                 Mensagem = "Usuário ou senha incorreta!";
             else
             {
-                App.Current.Properties["LOGIN"] = JsonConvert.SerializeObject(usuarioLogado);
+                UsuarioUtil.SetUsuarioLogado(usuarioLogado);
+                //App.Current.Properties["LOGIN"] = JsonConvert.SerializeObject(usuarioLogado);
                 App.Current.MainPage = new NavigationPage(new View.Chats()) { BarBackgroundColor = Color.FromHex("5ED055"), BarTextColor = Color.White};
             }
         }
