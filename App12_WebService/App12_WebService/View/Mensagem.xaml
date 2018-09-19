@@ -2,6 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App12_WebService.View.Mensagem">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Atualizar mensagens" Icon="refresh.png" Command="{Binding AtualizarCommand}"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <ScrollView>
@@ -21,9 +24,9 @@
 
             <StackLayout Orientation="Horizontal">
                 <Frame OutlineColor="#5ED055" CornerRadius="0" HorizontalOptions="FillAndExpand">
-                    <Entry Placeholder="Mensagem" BackgroundColor="White" TextColor="#5ED055" HorizontalOptions="FillAndExpand"/>
+                    <Entry Text="{Binding TxtMensagem}" Placeholder="Mensagem" BackgroundColor="White" TextColor="#5ED055" HorizontalOptions="FillAndExpand"/>
                 </Frame>
-                <Button Text="Enviar" BackgroundColor="#5ED055" TextColor="White"/>
+                <Button Command="{Binding BtnEnviarCommand}" Text="Enviar" BackgroundColor="#5ED055" TextColor="White"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

@@ -13,17 +13,64 @@ namespace App12_WebService.ViewModel
     public class MensagemViewModel:INotifyPropertyChanged
     {
         private StackLayout SL;
+        private Chat chat;
         private List<Mensagem> _mensagens;
         public List<Mensagem> Mensagens
         {
             get { return _mensagens; }
-            set { _mensagens = value; OnPropertyChanged("Mensagens"); ShowOnScreen(); }
+            set {
+                    _mensagens = value;
+                    OnPropertyChanged("Mensagens");
+                    if (value != null)
+                    {
+                        ShowOnScreen();
+                    }
+                }
         }
+
+        private string _txtMensagem;
+        public string TxtMensagem
+        {
+            get { return _txtMensagem; }
+            set
+            {
+                _txtMensagem = value;
+                OnPropertyChanged("TxtMensagem");
+            }
+        }
+
+        public Command BtnEnviarCommand { get; set; }
+        public Command AtualizarCommand { get; set; }
 
         public MensagemViewModel(Chat chat, StackLayout SLMensagemContainer)
         {
-            SL = SLMensagemContainer; 
+            this.chat = chat;
+            SL = SLMensagemContainer;
+            Atualizar();
+            BtnEnviarCommand = new Command(BtnEnviar);
+            AtualizarCommand = new Command(Atualizar);
+
+            Device.StartTimer(TimeSpan.FromSeconds(1), () => {
+                Atualizar();
+                return true;
+            });
+        }
+
+        private void Atualizar()
+        {
             Mensagens = ServiceWS.GetMensagensChat(chat);
+        }
+        private void BtnEnviar()
+        {
+            var msg = new Mensagem()
+            {
+                id_usuario = UsuarioUtil.GetUsuarioLogado().id,
+                mensagem = TxtMensagem,
+                id_chat = chat.id
+            };
+            ServiceWS.InsertMensagem(msg);
+            Atualizar();
+            TxtMensagem = string.Empty;
         }
 
         private void ShowOnScreen()

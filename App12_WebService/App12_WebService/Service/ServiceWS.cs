@@ -133,7 +133,7 @@ namespace App12_WebService.Service
             var URL = Enderecobase + "/chat/" + mensagem.id_chat + "/msg";
 
             FormUrlEncodedContent param = new FormUrlEncodedContent(new[]{
-                new KeyValuePair<string,string>("nome",mensagem.mensagem),
+                new KeyValuePair<string,string>("mensagem",mensagem.mensagem),
                 new KeyValuePair<string,string>("id_usuario",mensagem.id_usuario.ToString())
             });
 
