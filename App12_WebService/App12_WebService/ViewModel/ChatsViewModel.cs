@@ -10,7 +10,7 @@ using System.Linq;
 namespace App12_WebService.ViewModel
 {
     public class ChatsViewModel : INotifyPropertyChanged
-    {        
+    {
         private Chat _selectedItemChat;
         public Chat SelectedItemChat
         {
@@ -59,7 +59,7 @@ namespace App12_WebService.ViewModel
         {
             Chats = ServiceWS.GetChats();
         }
-
+        
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(string PropertyName)
         {

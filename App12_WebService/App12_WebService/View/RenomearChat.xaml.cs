@@ -11,13 +11,13 @@ using App12_WebService.Model;
 namespace App12_WebService.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Mensagem : ContentPage
+	public partial class RenomearChat : ContentPage
 	{
-		public Mensagem (Chat chat)
+		public RenomearChat (Chat chat)
 		{
 			InitializeComponent ();
 
-            BindingContext = new ViewModel.MensagemViewModel(chat, SLMensagemContainer, this, Scroll);
+            BindingContext = new ViewModel.RenomearChatViewModel(chat);
 		}
 	}
 }

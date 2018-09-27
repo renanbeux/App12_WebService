@@ -17,7 +17,7 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="10">
-                                <Label Text="{Binding nome}" TextColor="#5ED055"/>
+                                    <Label Text="{Binding nome}" TextColor="#5ED055" HorizontalOptions="StartAndExpand"/>
                             </StackLayout>
                         </ViewCell>                        
                     </DataTemplate>

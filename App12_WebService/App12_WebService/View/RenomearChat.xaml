@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App12_WebService.View.RenomearChat">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Text="{Binding txtRenomear}" TextColor="#5ED055"/>
+            <Button Text="Salvar novo nome" Command="{Binding SalvarCommand}" BackgroundColor="#5ED055" TextColor="White"/>
+            <Label Text="{Binding mensagem}" TextColor="#5ED055"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

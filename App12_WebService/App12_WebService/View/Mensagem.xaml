@@ -3,21 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App12_WebService.View.Mensagem">
     <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Renomear Chat" Icon="rename.png" Command="{Binding RenomearCommand}"/>
         <ToolbarItem Text="Atualizar mensagens" Icon="refresh.png" Command="{Binding AtualizarCommand}"/>
+        <ToolbarItem Text="Excluir Chat" Icon="excluir.png" Command="{Binding ExcluirCommand}"/>        
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <ScrollView>
+            <ScrollView x:Name="Scroll">
                 <StackLayout x:Name="SLMensagemContainer">
                     <Frame OutlineColor="#5ED055" CornerRadius="0" HorizontalOptions="Start">
                         <StackLayout>
+                            <!--
                             <Label Text="Filipe123" FontSize="10" TextColor="#5ED055"/>
                             <Label Text="Olaá maighinho" TextColor="#5ED055"/>
+                            -->
                         </StackLayout>
                     </Frame>
 
                     <StackLayout Padding="5" BackgroundColor="#5ED055" HorizontalOptions="End">
-                        <Label Text="Mundo aniii" TextColor="White"/>
+                        <!--<Label Text="Mundo aniii" TextColor="White"/> -->
                     </StackLayout>
                 </StackLayout>
             </ScrollView>
@@ -26,7 +30,7 @@
                 <Frame OutlineColor="#5ED055" CornerRadius="0" HorizontalOptions="FillAndExpand">
                     <Entry Text="{Binding TxtMensagem}" Placeholder="Mensagem" BackgroundColor="White" TextColor="#5ED055" HorizontalOptions="FillAndExpand"/>
                 </Frame>
-                <Button Command="{Binding BtnEnviarCommand}" Text="Enviar" BackgroundColor="#5ED055" TextColor="White"/>
+                <Button Command="{Binding BtnEnviarCommand}" Text="Enviar" BackgroundColor="#5ED055" TextColor="White"/>                
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
